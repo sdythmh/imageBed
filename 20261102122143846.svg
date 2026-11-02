@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="100%" height="100%">
+  <defs>
+    <!-- 黑色箭头 -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333" />
+    </marker>
+    <!-- 红色箭头(用于foot) -->
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e53935" />
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="100%" height="100%" fill="#fcfcfc" />
+
+  <!-- ==================== list_t 结构 ==================== -->
+  <rect x="40" y="60" width="120" height="130" rx="8" fill="#e3f2fd" stroke="#1e88e5" stroke-width="2" />
+  <text x="100" y="85" text-anchor="middle" font-weight="bold" font-family="sans-serif" font-size="16" fill="#1565c0">list_t</text>
+  
+  <line x1="40" y1="100" x2="160" y2="100" stroke="#1e88e5" stroke-width="1.5" />
+  <text x="55" y="125" font-family="monospace" font-size="14" fill="#333">head</text>
+  <circle cx="110" cy="120" r="4" fill="#333" /> <!-- head 指针起点 -->
+
+  <line x1="40" y1="145" x2="160" y2="145" stroke="#1e88e5" stroke-width="1.5" />
+  <text x="55" y="170" font-family="monospace" font-size="14" fill="#333">foot</text>
+  <circle cx="110" cy="165" r="4" fill="#e53935" /> <!-- foot 指针起点 -->
+
+  <!-- ==================== Node 1 ==================== -->
+  <rect x="250" y="40" width="100" height="110" rx="8" fill="#e8f5e9" stroke="#43a047" stroke-width="2" />
+  <text x="300" y="65" text-anchor="middle" font-weight="bold" font-family="sans-serif" font-size="14" fill="#2e7d32">node_t (1)</text>
+  
+  <line x1="250" y1="80" x2="350" y2="80" stroke="#43a047" stroke-width="1.5" />
+  <text x="300" y="102" text-anchor="middle" font-family="monospace" font-size="14" fill="#333">data</text>
+  
+  <line x1="250" y1="115" x2="350" y2="115" stroke="#43a047" stroke-width="1.5" />
+  <text x="260" y="138" font-family="monospace" font-size="14" fill="#333">next</text>
+  <circle cx="315" cy="133" r="4" fill="#333" />
+
+  <!-- ==================== Node 2 ==================== -->
+  <rect x="430" y="40" width="100" height="110" rx="8" fill="#e8f5e9" stroke="#43a047" stroke-width="2" />
+  <text x="480" y="65" text-anchor="middle" font-weight="bold" font-family="sans-serif" font-size="14" fill="#2e7d32">node_t (2)</text>
+  
+  <line x1="430" y1="80" x2="530" y2="80" stroke="#43a047" stroke-width="1.5" />
+  <text x="480" y="102" text-anchor="middle" font-family="monospace" font-size="14" fill="#333">data</text>
+  
+  <line x1="430" y1="115" x2="530" y2="115" stroke="#43a047" stroke-width="1.5" />
+  <text x="440" y="138" font-family="monospace" font-size="14" fill="#333">next</text>
+  <circle cx="495" cy="133" r="4" fill="#333" />
+
+  <!-- ==================== Node 3 ==================== -->
+  <rect x="610" y="40" width="100" height="110" rx="8" fill="#e8f5e9" stroke="#43a047" stroke-width="2" />
+  <text x="660" y="65" text-anchor="middle" font-weight="bold" font-family="sans-serif" font-size="14" fill="#2e7d32">node_t (3)</text>
+  
+  <line x1="610" y1="80" x2="710" y2="80" stroke="#43a047" stroke-width="1.5" />
+  <text x="660" y="102" text-anchor="middle" font-family="monospace" font-size="14" fill="#333">data</text>
+  
+  <line x1="610" y1="115" x2="710" y2="115" stroke="#43a047" stroke-width="1.5" />
+  <text x="620" y="138" font-family="monospace" font-size="14" fill="#333">next</text>
+  <circle cx="675" cy="133" r="4" fill="#333" />
+
+  <!-- ==================== 指针连线 ==================== -->
+  <!-- head -> Node 1 -->
+  <path d="M 110 120 C 180 120, 180 85, 243 85" fill="none" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- foot -> Node 3 (红线表示跨越) -->
+  <path d="M 110 165 L 110 230 L 660 230 L 660 157" fill="none" stroke="#e53935" stroke-width="2" marker-end="url(#arrow-red)" />
+
+  <!-- Node 1 next -> Node 2 -->
+  <line x1="315" y1="133" x2="423" y2="133" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- Node 2 next -> Node 3 -->
+  <line x1="495" y1="133" x2="603" y2="133" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- Node 3 next -> NULL -->
+  <line x1="675" y1="133" x2="780" y2="133" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- NULL 文本 -->
+  <rect x="790" y="118" width="55" height="30" rx="4" fill="#eceff1" stroke="#90a4ae" stroke-width="1.5" />
+  <text x="817" y="139" text-anchor="middle" font-weight="bold" font-family="monospace" font-size="14" fill="#546e7a">NULL</text>
+</svg>
